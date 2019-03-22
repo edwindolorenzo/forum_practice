@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   validates_presence_of :name
 
-  has_many :forums
-  has_many :chats
+
+  enum role: {customer: 0 , admin: 1}
+  has_many :forums , dependent: :destroy
+  has_many :chats , dependent: :destroy
 
   def first_name
     self.name.split.first

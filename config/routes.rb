@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   root to: "forums#index", as: "home"
   # get 'forums/:id' => "forums#show", as: "show" 
 
+  resources :admins
+  
   resources :forums do
     resources :chats
   end
