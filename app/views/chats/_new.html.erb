@@ -1,0 +1,10 @@
+<h1>new Comment</h1>
+<%= form_for([@forum, @forum.chats.build]) do |f| %>
+    <p>
+        <%= f.label :body%>
+        <%= f.text_area(:body)%>
+    </p>
+    <p>
+    <%= f.submit()%>
+    </p>
+<% end %>

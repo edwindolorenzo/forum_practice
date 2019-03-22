@@ -2,7 +2,7 @@
 
 <% @forum.chats.each do |chat| %>
     <div class="well">
-    <h1><%= chat.name %></h1>
+    <strong><%= chat.user.name %></strong>
     <p><%= chat.body %></p>
     </div>
 <% end%>
