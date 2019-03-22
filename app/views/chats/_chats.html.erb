@@ -4,5 +4,8 @@
     <div class="well">
     <strong><%= chat.user.name %></strong>
     <p><%= chat.body %></p>
+    <% if current_user == chat.user %>
+    <%= link_to "Delete", [chat.forum, chat], method: :delete, data: {confirm: 'Delete Comment?'} %>
+    <% end %>
     </div>
 <% end%>

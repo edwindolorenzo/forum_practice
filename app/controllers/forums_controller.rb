@@ -1,4 +1,6 @@
 class ForumsController < ApplicationController
+    before_action :authenticate!, only: [:new]
+    
     def index
         @forums = Forum.all
     end
