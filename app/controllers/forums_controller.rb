@@ -7,8 +7,12 @@ class ForumsController < ApplicationController
         @forum = Forum.new
     end
 
+    def show
+        @forum = Forum.find(params[:id])
+    end
+
     def create
-        # render plain: params[:forum].inspect
+        # render plain: params[:forum].merge(user:current_user).inspect
         @forum = Forum.new(forum_params)
         if @forum.save
             redirect_to home_path

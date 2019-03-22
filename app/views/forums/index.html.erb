@@ -3,7 +3,7 @@
 <% @forums.each do |forum| %>
     <div class="well">
     <h1><%= forum.user.name %></h1>
-    <h3><%= forum.title %></h3>
+    <h3><%= link_to "#{forum.title}", forum_path(forum) %></h3>
     <p><%= forum.body %></p>
     </div>
     <% end%>

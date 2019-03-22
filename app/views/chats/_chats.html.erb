@@ -1,0 +1,8 @@
+<h1>Comments</h1>
+
+<% @forum.chats.each do |chat| %>
+    <div class="well">
+    <h1><%= chat.name %></h1>
+    <p><%= chat.body %></p>
+    </div>
+<% end%>
