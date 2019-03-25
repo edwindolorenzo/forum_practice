@@ -2,11 +2,12 @@
 
 <% @forums.each do |forum| %>
     <div class="well">
-    <h1><%= forum.user.name %></h1>
-    <h3><%= link_to "#{forum.title}", forum_path(forum) %></h3>
-    <p><%= forum.body.truncate(5 , omission: '??') %></p>
-    <% if current_user == forum.user %>
-    <%= link_to "Delete", forum_path(forum), method: :delete, data: {confirm: 'Delete Forum?'} %>
-    <% end %>
+        <%= image_tag profile_img (forum.user.profile_img.url) %>
+        <h1><%= forum.user.name %></h1>
+        <h3><%= link_to "#{forum.title}", forum_path(forum) %></h3>
+        <p><%= forum.body.truncate(5 , omission: '??') %></p>
+        <% if current_user == forum.user %>
+            <%= link_to "Delete", forum_path(forum), method: :delete, data: {confirm: 'Delete Forum?'} %>
+            <% end %>
     </div>
-    <% end%>
+<% end%>

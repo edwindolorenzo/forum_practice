@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    include DeviseWhitelist
+    # include DeviseWhitelist
 
     def authenticate!
         unless current_user
