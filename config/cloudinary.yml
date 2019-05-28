@@ -1,0 +1,18 @@
+development:
+  cloud_name: ddyqe4mxl
+  api_key: '321353317435666'
+  api_secret: xey1hPf604KJKOUWBd6QGAFuJC4
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: ddyqe4mxl
+  api_key: '321353317435666'
+  api_secret: xey1hPf604KJKOUWBd6QGAFuJC4
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: ddyqe4mxl
+  api_key: '321353317435666'
+  api_secret: xey1hPf604KJKOUWBd6QGAFuJC4
+  enhance_image_tag: true
+  static_file_support: false

@@ -12,7 +12,6 @@ class ForumsController < ApplicationController
 
     def show
         @forum = Forum.find(params[:id])
-        @user = User.find(@forum.user.id)
     end
 
     def create
