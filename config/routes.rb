@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   resources :forums do
     resources :chats
   end
+
+  resources :users
 end

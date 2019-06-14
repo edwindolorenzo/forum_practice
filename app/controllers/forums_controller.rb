@@ -3,7 +3,9 @@ class ForumsController < ApplicationController
     before_action :is_admin?, only: [:index]
     
     def index
-        @forums = Forum.all
+        @q = Forum.ransack(params[:q])
+        @forums = @q.result.includes(:user)
+        # @forums = Forum.all
     end
 
     def new

@@ -68,8 +68,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
-# Upload files in your Ruby applications, map them to a range of ORMs, store them on different backends.
+# simple and extremely flexible way to upload files from Ruby applications.
 gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+
+# Manipulate file to save in cloudinary
 gem 'cloudinary'
 
 # Manipulate images with minimal use of memory via ImageMagick / GraphicsMagick
@@ -80,3 +82,6 @@ gem 'carrierwave-aws', '~> 1.3'
 
 # Autoload dotenv in Rails.
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.1'
+
+# Search 
+gem 'ransack'
