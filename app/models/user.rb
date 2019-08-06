@@ -21,7 +21,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  mount_uploader :profile_img, UserUploader
+  mount_uploader :profile_img, ImageUploader
 
   validates_presence_of :name
 
