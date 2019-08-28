@@ -4,23 +4,17 @@
     <title>ForumPractice</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class='background'>
+    <%= render partial: 'shared/header' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-    <%= link_to "Home", home_path%>
-    <% if current_user %>
-    <%= link_to "Logout",destroy_user_session_path, method: :delete %>
-    <%= link_to "Create Forum",new_forum_path %>
-    <% else %>
-    <%= link_to "Register",new_user_registration_path %>
-    <%= link_to "Login",new_user_session_path %>
-    <% end %>
+    
+
     <%= yield %>
   </body>
 </html>

@@ -2,7 +2,7 @@
     <h1>Welcome to Forum</h1>
     <div class="col-md-12">
 
-        <%= search_form_for @q do |f|%>
+        <%= search_form_for [:dashboard, @q] do |f|%>
             <%= f.search_field :title_or_user_name_cont %>
             <%= f.submit%>
         <%end%>
@@ -15,10 +15,10 @@
                             <%= image_tag profile_img (forum.user.profile_img.url(:thumb)) %>
                         </div>
                         <div class="col-md-10">
-                            <h1><%= link_to "#{forum.title}", forum_path(forum) %></h1>
-                            <p><%= forum.body.truncate(25 , omission: '??') %></p>
+                            <h1><%= link_to "#{forum.title}", dashboard_forum_path(forum) %></h1>
+                            <p><%= forum.body.truncate(25 , omission: '...') %></p>
                             <% if current_user == forum.user %>
-                                <%= link_to "Delete", forum_path(forum), method: :delete, data: {confirm: 'Delete Forum?'} %>
+                                <%= link_to "Delete", dashboard_forum_path(forum), method: :delete, data: {confirm: 'Delete Forum?'} %>
                             <% end %>
                             <div style="text-align: right;">
                                 Created by: <%= forum.user.name %>
