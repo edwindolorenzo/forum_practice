@@ -7,12 +7,15 @@ class ImageUploader < CarrierWave::Uploader::Base
   # storage :file
   # storage :fog
 
-  include Cloudinary::CarrierWave
-
-  process :convert => 'png'
-  process :tags => ['post_picture']
-
-  # Override the directory where uploaded files will be stored.
+  
+  if Rails.env.development? || Rails.env.test?
+    storage :file
+  else
+    include Cloudinary::CarrierWave
+    process :convert => 'jpg'
+    process :tags => ['post_picture']
+  end
+    # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -38,10 +41,18 @@ class ImageUploader < CarrierWave::Uploader::Base
     process resize_to_fit: [50, 50]
   end
 
+  version :form do
+    process resize_to_fit: [150, 150]
+  end
+
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
   def extension_whitelist
     %w(jpg jpeg gif png)
+  end
+
+  def public_id
+    return model.name
   end
 
   # Override the filename of the uploaded files:

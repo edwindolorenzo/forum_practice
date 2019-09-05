@@ -6,11 +6,14 @@ class UserUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   # storage :file
   # storage :fog
-  include Cloudinary::CarrierWave
-
-  process :convert => 'png'
-  process :tags => ['post_picture']
-
+  
+  if Rails.env.production?
+    include Cloudinary::CarrierWave
+    process :convert => 'jpg'
+    process :tags => ['post_picture']
+  else
+    storage :file
+  end
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
