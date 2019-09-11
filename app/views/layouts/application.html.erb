@@ -9,7 +9,11 @@
   </head>
 
   <body class='background'>
+    <% if current_user&.admin?%>
+    <%= render partial: 'shared/header_admin' %>
+    <% else%>
     <%= render partial: 'shared/header' %>
+    <% end%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 

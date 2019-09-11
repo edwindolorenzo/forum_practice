@@ -1,7 +1,6 @@
 module Dashboard
   class ForumsController < ApplicationController
     before_action :authenticate!, only: [:new]
-      before_action :is_admin?, only: [:index]
       
       def index
           @q = Forum.ransack(params[:q])
@@ -39,10 +38,5 @@ module Dashboard
           params.require(:forum).permit(:title, :body).merge(user:current_user)
       end
 
-      def is_admin?
-          if current_user && current_user.admin?
-              redirect_to admins_path
-          end
-      end
   end
 end
