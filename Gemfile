@@ -89,3 +89,7 @@ gem 'ransack'
 gem 'slim'
 
 gem 'simple_form'
+
+gem 'webpacker'
+
+gem 'react-rails'
