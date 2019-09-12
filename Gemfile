@@ -85,3 +85,7 @@ gem 'dotenv-rails', '~> 2.7', '>= 2.7.1'
 
 # Search 
 gem 'ransack'
+
+gem 'slim'
+
+gem 'simple_form'
