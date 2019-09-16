@@ -93,3 +93,5 @@ gem 'simple_form'
 gem 'webpacker'
 
 gem 'react-rails'
+
+gem 'pagy'

@@ -1,4 +1,5 @@
 module ApplicationHelper
+    include Pagy::Frontend
     def image_generator
         "https://via.placeholder.com/150"
     end

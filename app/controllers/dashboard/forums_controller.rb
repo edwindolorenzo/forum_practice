@@ -4,7 +4,7 @@ module Dashboard
       
       def index
           @q = Forum.ransack(params[:q])
-          @forums = @q.result.includes(:user)
+          @pagy, @forums = pagy(@q.result.includes(:user))
           # @forums = Forum.all
       end
 
@@ -20,7 +20,7 @@ module Dashboard
           # render plain: params[:forum].merge(user:current_user).inspect
           @forum = Forum.new(forum_params)
           if @forum.save
-              redirect_to home_path
+              redirect_to root_path
           else
               render 'new'
           end
