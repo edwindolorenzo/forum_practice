@@ -95,3 +95,5 @@ gem 'webpacker'
 gem 'react-rails'
 
 gem 'pagy'
+
+gem "js-routes"

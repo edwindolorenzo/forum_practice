@@ -1,5 +1,5 @@
-<div class="container">
 <%= react_component("Forum", forums: @forums) %>
+<div class="container">
     <h1>Welcome to Forum</h1>
     <div class="col-md-12">
 
@@ -29,6 +29,6 @@
                 </div>
             </div>
         <% end%>
-        <%= pagy_bootstrap_nav(@pagy).html_safe %>
+        <%= pagy_bootstrap_nav(@pagy).html_safe  %>
     </div>
 </div>

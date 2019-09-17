@@ -4,7 +4,11 @@ module Dashboard
       
       def index
           @q = Forum.ransack(params[:q])
-          @pagy, @forums = pagy(@q.result.includes(:user))
+          @pagy, @forums = pagy(@q.result)
+          respond_to do |format|
+            format.html
+            format.json { render json: @forums}
+          end
           # @forums = Forum.all
       end
 
